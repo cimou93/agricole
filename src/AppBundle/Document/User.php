@@ -6,12 +6,11 @@
  * Time: 22:41
  */
 
-// src/AppBundle/Document/User.php
-
 namespace AppBundle\Document;
 
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
+use MongoDate;
 
 /**
  * @MongoDB\Document
@@ -22,6 +21,44 @@ class User extends BaseUser
      * @MongoDB\Id(strategy="auto")
      */
     protected $id;
+
+    /**
+     * @MongoDB\Field(type="int",name="created_by")
+     */
+    protected $created_by;
+
+    /**
+     * @return mixed
+     */
+    public function getCreatedBy()
+    {
+        return $this->created_by;
+    }
+
+    /**
+     * @param mixed $created_by
+     */
+    public function setCreatedBy($created_by): void
+    {
+        $this->created_by = $created_by;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
+
 
     public function __construct()
     {
