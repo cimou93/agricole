@@ -13,7 +13,7 @@ use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
 use MongoDate;
 
 /**
- * @MongoDB\Document
+ * @MongoDB\Document(repositoryClass="AppBundle\Repository\UserRepository")
  */
 class User extends BaseUser
 {
@@ -23,7 +23,7 @@ class User extends BaseUser
     protected $id;
 
     /**
-     * @MongoDB\Field(type="int",name="created_by")
+     * @MongoDB\Field(type="string",name="created_by")
      */
     protected $created_by;
 

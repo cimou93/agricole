@@ -11,7 +11,7 @@ namespace Api\ApiBundle\Document;
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
 
 /**
- * @MongoDB\Document
+ * @MongoDB\Document(repositoryClass="Api\ApiBundle\Repository\UserParcelleRepository")
  */
 class UserParcelle
 {

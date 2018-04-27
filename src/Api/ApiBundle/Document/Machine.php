@@ -11,7 +11,7 @@ namespace Api\ApiBundle\Document;
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
 
 /**
- * @MongoDB\Document
+ * @MongoDB\Document(repositoryClass="Api\ApiBundle\Repository\MachineRepository")
  */
 class Machine
 {
@@ -21,27 +21,27 @@ class Machine
     protected $id;
 
     /**
-     * @MongoDB\ReferenceOne(targetDocument=Api\ApiBundle\Document\Parcelle",storeAs="id")
+     * @MongoDB\ReferenceOne(targetDocument="Api\ApiBundle\Document\Parcelle",storeAs="id")
      */
     protected $parcelle_id;
 
     /**
-     * @MongoDB\String(name="reference")
+     * @MongoDB\Field(name="reference",type="string")
      */
     protected $reference;
 
     /**
-     * @MongoDB\String(name="type")
+     * @MongoDB\Field(name="type",type="string")
      */
     protected $type;
 
     /**
-     * @MongoDB\Float(name="longitude",type="float")
+     * @MongoDB\Field(name="longitude",type="float")
      */
     protected $longitude;
 
     /**
-     * @MongoDB\Float(name="altitude",type="float")
+     * @MongoDB\Field(name="altitude",type="float")
      */
     protected $altitude;
 

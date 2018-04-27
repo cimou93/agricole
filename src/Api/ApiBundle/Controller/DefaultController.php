@@ -2,14 +2,8 @@
 
 namespace Api\ApiBundle\Controller;
 
-use Api\ApiBundle\Document\Parcelle;
-use Api\ApiBundle\Document\UserParcelle;
-use AppBundle\Document\User;
-use DateTime;
-use Monolog\Handler\UdpSocketTest;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use FOS\RestBundle\Controller\Annotations as Rest;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
 class DefaultController extends Controller
 {
@@ -20,22 +14,16 @@ class DefaultController extends Controller
 
     public function indexAction()
     {
-//        $dm = $this->get("doctrine_mongodb")->getManager();
-//
-//        $user = $this->get("doctrine_mongodb")->getRepository("AppBundle:User")->findAll();
-//        $parcelles = $this->get("doctrine_mongodb")->getRepository("ApiBundle:Parcelle")->findAll();
-//
-//        foreach ($parcelles as $parcelle) {
-//            $user_parcelle = new UserParcelle();
-//            $user_parcelle->setParcelleId($parcelle);
-//            $user_parcelle->setUserId($user[0]);
-////            $dm->persist($user_parcelle);
-////
-////            $dm->flush();
-//        }
+        $dm = $this->get("doctrine_mongodb")->getManager();
 
-        $user_parcelles =$this->get("doctrine_mongodb")->getRepository("ApiBundle:UserParcelle")->findAll();
+        $user = $this->get("doctrine_mongodb")->getRepository("AppBundle:User")->find("5ae2dd2214519b7a40003231");
 
-        return $user_parcelles;
+        $user->setCreatedBy('5ae075cd14519bed5f0059e1');
+
+        $dm->flush();
+        $user = $this->get("doctrine_mongodb")->getRepository("AppBundle:User")->find("5ae2dd2214519b7a40003231");
+
+
+        return $user;
     }
 }

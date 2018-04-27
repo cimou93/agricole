@@ -56,8 +56,8 @@ return array(
     'Cviebrock\\EloquentSluggable\\' => array($vendorDir . '/cviebrock/eloquent-sluggable/src'),
     'Composer\\CaBundle\\' => array($vendorDir . '/composer/ca-bundle/src'),
     'Cocur\\Slugify\\' => array($vendorDir . '/cocur/slugify/src'),
-    'Carbon\\' => array($vendorDir . '/nesbot/carbon/src/Carbon'),
     'AppBundle\\' => array($baseDir . '/src/AppBundle'),
     'Api\\ApiBundle\\' => array($baseDir . '/src/Api/ApiBundle'),
     'Alcaeus\\MongoDbAdapter\\' => array($vendorDir . '/alcaeus/mongo-php-adapter/lib/Alcaeus/MongoDbAdapter'),
+    '' => array($vendorDir . '/nesbot/carbon/src'),
 );

@@ -11,7 +11,7 @@ namespace Api\ApiBundle\Document;
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
 
 /**
- * @MongoDB\Document
+ * @MongoDB\Document(repositoryClass="Api\ApiBundle\Repository\ParcelleRepository")
  */
 class Parcelle
 {
@@ -21,22 +21,22 @@ class Parcelle
     protected $id;
 
     /**
-     * @MongoDB\String(name="libelle",type="string")
+     * @MongoDB\Field(name="libelle",type="string")
      */
     protected $libelle;
 
     /**
-     * @MongoDB\Float(name="longitude",type="float")
+     * @MongoDB\Field(name="longitude",type="float")
      */
     protected $longitude;
 
     /**
-     * @MongoDB\Float(name="altitude",type="float")
+     * @MongoDB\Field(name="altitude",type="float")
      */
     protected $altitude;
 
     /**
-     * @MongoDB\Float(name="superficie",type="float")
+     * @MongoDB\Field(name="superficie",type="float")
      */
     protected $superficie;
 
