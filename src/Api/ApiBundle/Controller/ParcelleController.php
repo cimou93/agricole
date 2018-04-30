@@ -20,20 +20,20 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class ParcelleController extends Controller
 {
-    /**
-     * @Rest\Route(name="_parcelle",path="/",methods={"GET", "POST"})
-     * @Rest\View()
-     */
-    public function indexAction()
-    {
-        //recuperer l'utilisateur connecté
-        $current_user = $this->getUser();
-
-        //instance doctrine mongodb manager
-        $dm = $this->get("doctrine_mongodb")->getManager();
-
-        return true;
-    }
+//    /**
+//     * @Rest\Route(name="_parcelle",path="/",methods={"GET", "POST"})
+//     * @Rest\View()
+//     */
+//    public function indexAction()
+//    {
+//        //recuperer l'utilisateur connecté
+//        $current_user = $this->getUser();
+//
+//        //instance doctrine mongodb manager
+//        $dm = $this->get("doctrine_mongodb")->getManager();
+//
+//        return true;
+//    }
 
     /**
      * @Rest\Route(name="_parcelle",path="/add",methods={"POST"})

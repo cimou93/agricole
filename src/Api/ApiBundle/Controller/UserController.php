@@ -33,7 +33,10 @@ class UserController extends Controller
         $current_user = $this->getUser();
 
         //return les utilisateur creer pas l'utilisateur connecté
-        return $dm->getRepository("AppBundle:User")->GetUserForAdmin($current_user->getId());
+        $users = $dm->getRepository("AppBundle:User")->GetUserForAdmin($current_user->getId());
+
+        return array("statut" => "success", "message" => "succée", "users" => $users);
+
     }
 
     /**
