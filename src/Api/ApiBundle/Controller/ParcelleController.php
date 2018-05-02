@@ -68,6 +68,8 @@ class ParcelleController extends Controller
 
                 $dm->persist($parcelle);
 
+                //ajouter USerPArcelle
+
                 $dm->flush();
 
                 return array("statut" => "success", "message" => "l'utilisateur créer avec succée", "parcelle" => $parcelle);
