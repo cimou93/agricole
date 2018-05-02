@@ -173,7 +173,7 @@ class MachineController extends Controller
                     return array("statut" => "success", "message" => "success");
                 }
             } else {
-                return array("statut" => "f", "message" => "succée");
+                return array("statut" => "failed", "message" => "succée");
 
             }
         } else {
